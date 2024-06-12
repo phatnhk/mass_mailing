@@ -231,6 +231,21 @@
                                     attrs="{'readonly': [('state', 'in', ('sending', 'done'))]}"/>
                                 </div>
                             </div>
+                            
+                            <!-- START custom tbd -->
+                            <label for="send_type" string="Gửi với dịch vụ"/>
+                            <div name="send_type_container">
+                                <div class="d-flex align-items-baseline flex-wrap">
+                                    <field name="send_type"/>
+                                </div>
+                            </div>
+                            <label for="expiration_date" string="Ngày hết hạn"/>
+                            <div name="expiration_date_container">
+                                <div class="d-flex align-items-baseline flex-wrap">
+                                    <field name="expiration_date"/>
+                                </div>
+                            </div>
+                            <!-- END custom tbd -->
                         </group>
                         <notebook>
                             <page string="Mail Body" name="mail_body">
