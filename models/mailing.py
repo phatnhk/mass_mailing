@@ -67,6 +67,13 @@ class MassMailing(models.Model):
             return self.env['ir.mail_server'].search([('id', '=', server_id)]).id
         except ValueError:
             return False
+        
+    expiration_date = fields.Date(string="Expiration date", tracking=True)
+    send_type = fields.Selection(
+        selection=[('onesms', 'One SMS API'), ('iap', 'By Odoo')],
+        string='Send Type', default='onesms'
+    )
+
 
     active = fields.Boolean(default=True, tracking=True)
     subject = fields.Char(
